@@ -1,0 +1,7 @@
+
+[webserver]
+192.168.43.35 ansible_ssh_user=root ansible_ssh_pass=adarsh 
+192.168.43.101 ansible_ssh_user=root ansible_ssh_pass=adarsh 
+
+[loadbalancer]
+192.168.43.129 ansible_user=root ansible_ssh_password=adarsh ansible_connection=ssh
