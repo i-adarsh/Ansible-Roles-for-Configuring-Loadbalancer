@@ -1,0 +1,12 @@
+---
+- name: Installing Apache Server
+  hosts: webserver
+
+  roles:
+          - webserver
+
+- name: Configuring Haproxy
+  hosts: loadbalancer
+
+  roles:
+          - loadbalancer
