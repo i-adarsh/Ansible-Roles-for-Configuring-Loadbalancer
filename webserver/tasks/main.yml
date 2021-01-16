@@ -1,0 +1,19 @@
+---
+# tasks file for webserver
+
+- name: Installing Httpd Server ( Apache Server)
+  yum:
+          name: httpd
+          state: present
+
+- name: Copying Files
+  template:
+          src: files/index.html.j2
+          dest: "/var/www/html/index.html"
+  register: copying
+
+- name: Starting Httpd Server
+  service:
+          name: httpd
+          state: "restarted"
+  when: copying.changed
